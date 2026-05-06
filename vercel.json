@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "bcrp-proxy",
+  "routes": [{ "src": "/api/(.*)", "dest": "/api/bcrp.js" }]
+}
