@@ -1,5 +1,17 @@
 {
   "version": 2,
-  "name": "bcrp-proxy",
-  "routes": [{ "src": "/api/(.*)", "dest": "/api/bcrp.js" }]
+  "functions": {
+    "api/bcrp.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
 }
